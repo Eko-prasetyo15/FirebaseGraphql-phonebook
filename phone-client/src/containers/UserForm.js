@@ -29,7 +29,7 @@ class UserForm extends Component {
         this.setState({ addres: event.target.value });
     }
     handlephoneChange(event) {
-        this.setState({ addres: event.target.value });
+        this.setState({ phone: event.target.value });
     }
     handleSubmit(event) {
         if (this.state.id && this.state.name && this.state.addres && this.state.phone) {

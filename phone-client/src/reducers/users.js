@@ -1,6 +1,7 @@
 const users = (state = [], action) => {
     switch (action.type) {
         case 'LOAD_USER_SUCCESS':
+            console.log(action,"ini item cuk")
             return action.users.map((item) => {
                 item.sent = true;
                 return item

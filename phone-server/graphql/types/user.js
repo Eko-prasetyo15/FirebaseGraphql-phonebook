@@ -19,8 +19,8 @@ exports.userType = new GraphQLObjectType({
             addres: {
                 type: GraphQLString
             },
-            addres: {
-                type: GraphQLInteger
+            phone: {
+                type: GraphQLString
             }
         }
     }

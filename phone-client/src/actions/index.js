@@ -8,9 +8,9 @@ const client = new ApolloClient({
 });
 
 // start load user data
-export const loadUserSuccess = (contact) => ({
+export const loadUserSuccess = (users) => ({
     type: 'LOAD_USER_SUCCESS',
-    contact
+    users
 })
 
 export const loadUserFailure = () => ({
@@ -33,7 +33,7 @@ export const loadUser = () => {
         })
             .then(function (response) {
                 console.log(response);
-                dispatch(loadUserSuccess(response.data.contact))
+                dispatch(loadUserSuccess(response.data.users))
             })
             .catch(function (error) {
                 console.error(error);

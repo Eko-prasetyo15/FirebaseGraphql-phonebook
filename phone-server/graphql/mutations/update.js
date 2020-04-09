@@ -1,5 +1,6 @@
 var GraphQLNonNull = require('graphql').GraphQLNonNull;
 var GraphQLString = require('graphql').GraphQLString;
+var GraphQLInteger = require('graphql').GraphQLInteger;
 var UserType = require('../types/user');
 var services = require('../../services');
 
@@ -18,9 +19,9 @@ exports.update = {
         phone: {
             type: new GraphQLNonNull(GraphQLString),
 
-        },
+        }
+    },
         resolve(root, params) {
             return services.updateUser(params)
-        }
-        }
     }
+}

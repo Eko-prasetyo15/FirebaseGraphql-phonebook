@@ -10,9 +10,15 @@ const User = (props) => {
             <td>
                 <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-danger"
                     onClick={props.sent ? props.onDelete : props.resend}>
                     {props.sent ? 'Hapus' : 'Kirim Ulang'}
+                </button>
+                <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={props.sent ? props.onEdit : props.resend}>
+                    {props.sent ? 'Edit' : 'Kirim Ulang'}
                 </button>
             </td>
             {!props.sent &&

@@ -20,43 +20,44 @@ const getUsers = () => {
     }));
 }
 
-const createUser = (user) => {
-    const referencePath = '/contact/' + user.id + '/';
+const createUser = (params) => {
+    const referencePath = '/contact/' + params.id + '/';
     const contactReference = firebase.database().ref(referencePath);
     return (new Promise((resolve, reject) => {
-        contactReference.set({ name: user.name, addres: user.addres, phone: user.phone }, function (error) {
+        contactReference.set({ name: params.name, addres: params.addres, phone: params.phone }, function (error) {
             if (error) {
                 reject("Data could not be saved." + error);
             } else {
-                resolve(user)
+                resolve(params)
             }
         });
     }));
 }
 
-const updateUser = (user) => {
-    const referencePath = '/contact/' + user.id + '/';
+const updateUser = (params) => {
+    const referencePath = '/contact/' + params.id + '/';
     const contactReference = firebase.database().ref(referencePath);
     return (new Promise((resolve, reject) => {
-        contactReference.update({ name: user.name, addres: user.addres, phone: user.phone }, function (error) {
+        contactReference.update({ name: params.name, addres: params.addres, phone: params.phone }, function (error) {
             if (error) {
                 reject("Data could not be updated." + error);
+                console.log(params)
             } else {
-                resolve(user)
+                resolve(params)
             }
         });
     }));
 }
 
-const deleteUser = (user) => {
-    const referencePath = '/contact/' + user.id + '/';
+const deleteUser = (params) => {
+    const referencePath = '/contact/' + params.id + '/';
     const contactReference = firebase.database().ref(referencePath);
     return (new Promise((resolve, reject) => {
         contactReference.remove((error) => {
             if (error) {
                 reject("Data could not be deleted." + error);
             } else {
-                resolve(user)
+                resolve(params)
             }
         })
     }));
