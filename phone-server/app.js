@@ -30,8 +30,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('*', cors());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+const userSchema = require('./graphql').userSchema;
+app.use('/graphql', cors(), graphqlHTTP({
+  schema: userSchema,
+  rootValue: global,
+  graphiql: true
+}));
 
 module.exports = app;
