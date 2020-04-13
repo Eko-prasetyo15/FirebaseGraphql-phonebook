@@ -52,7 +52,7 @@ class UserSearch extends React.Component {
             <nav className="navbar navbar-expand-lg navbar-dark blue lighten-2 mb-4">
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <form className="form-inline mr-auto">
-                        <input className="form-control" type="text" placeholder="Name/Phone" aria-label="Search" value ={this.state.value} onChange={this.handleFilterChange}/>
+                        <input className="form-control" type="text" placeholder="input name" aria-label="Search" value ={this.state.value} onChange={this.handleFilterChange}/>
                         <button className="btn btn-mdb-color btn-rounded btn-sm my-0 ml-sm-2" onClick={this.handleButtonSearch} type="submit">Search</button>
                     </form>
                 </div>

@@ -12,6 +12,8 @@ class UserList extends Component {
 
     render() {
         const nodes = this.props.users.map((item, index) => {
+            console.log(item,'ini item');
+            
             return (
                 item.isVisible && (item.onEdit ?
                     <EditForm

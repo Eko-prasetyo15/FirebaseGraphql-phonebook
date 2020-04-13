@@ -83,7 +83,9 @@ const users = (state = [], action) => {
         case "SEARCH_USER":
             return state.map((item) => ({
                 ...item,
-                isVisible: (item.name.toLowerCase().includes(action.value) || item.name.includes(action.value))
+                isVisible: (item.name.toLowerCase().includes(action.value) || item.name.includes(action.value)|| (item.phone.includes(action.value)
+                    || item.phone.includes(action.value) || (item.addres.toLowerCase().includes(action.value) || (item.addres.includes(action.value)))
+                     ))
             }))
 
         case "SEARCH_USER_RESET":
