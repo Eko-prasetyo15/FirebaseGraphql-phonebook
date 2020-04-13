@@ -32,7 +32,7 @@ export const loadUser = () => {
             query: contactQuery,
         })
             .then(function (response) {
-                console.log(response);
+                console.log(response,'ini load data men');
                 dispatch(loadUserSuccess(response.data.users))
             })
             .catch(function (error) {
@@ -137,6 +137,7 @@ export const updateUser = (id, name, addres, phone) => {
             }
         })
             .then(function (response) {
+                console.log(response, 'ini hasil update data men')
                 alert('data berhasil di update')
                 dispatch(updateUserSuccess(response.data))
             })

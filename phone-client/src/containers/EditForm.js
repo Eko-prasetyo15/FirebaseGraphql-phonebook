@@ -40,38 +40,39 @@ class EditForm extends Component {
     }
     handleSubmit(event) {
         event.preventDefault()
-            this.props.updateUser(this.state.id, this.state.name, this.state.addres, this.state.phone)
+        this.props.updateUser(this.state.id, this.state.name, this.state.addres, this.state.phone)
     }
-    render (){
+    render() {
         return (
             // onSubmit={this.handleSubmit}
             <tr>
                 <th scope="row">{this.props.index}</th>
                 <td>
-                    
-                            <input type="text" className="form-control" name="id" value={this.state.id} disabled={true} />
-                       
+
+                    <input type="text" className="form-control" name="id" value={this.state.id} disabled={true} />
+
                 </td>
                 <td>
-                   
-                            <input type="text" className="form-control" name="name" value={this.state.name} onChange={this.handlenameChange} required={true} />
-                      
+
+                    <input type="text" className="form-control" name="name" value={this.state.name} onChange={this.handlenameChange} required={true} />
+
                 </td>
                 <td>
-                            <input type="text" className="form-control" name="addres" value={this.state.addres} onChange={this.handleaddresChange} required={true} />
-                        
+                    <input type="text" className="form-control" name="addres" value={this.state.addres} onChange={this.handleaddresChange} required={true} />
+
                 </td>
                 <td>
-                    
-                            <input type="number" className="form-control" name="phone" value={this.state.phone} onChange={this.handlephoneChange} required={true} />
-                    
+
+                    <input type="number" className="form-control" name="phone" value={this.state.phone} onChange={this.handlephoneChange} required={true} />
+
                 </td>
                 <td>
                     <button type="submit" className="btn  mr-2" onClick={this.handleSubmit}><i className="fas fa-check"></i> Save</button>
                     <button type="button" className="btn " onClick={() => this.props.onCancel()}><i className="fas fa-times"></i> Cancel</button>
                 </td>
             </tr>
-        )}
+        )
+    }
 }
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onCancel: () => dispatch(updateOFF(ownProps.id)),
