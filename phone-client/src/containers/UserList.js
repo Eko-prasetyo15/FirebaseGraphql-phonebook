@@ -38,13 +38,13 @@ class UserList extends Component {
         return (
 
             <table className="table table-bordered table-striped table-dark">
-                <thead>
+                <thead className="thead-light">
                     <tr>
-                        <th scope="col">Call Name</th>
-                        <th scope="col">Full Name</th>
-                        <th scope="col">Addres</th>
-                        <th scope="col">Phone Number</th>
-                        <th scope="col">Setting</th>
+                        <th scope="col">CALL NAME</th>
+                        <th scope="col">FULL NAME</th>
+                        <th scope="col">ADDRES</th>
+                        <th scope="col">PHONE NUMBER</th>
+                        <th scope="col">SETTING</th>
                     </tr>
                 </thead>
                 <tbody>

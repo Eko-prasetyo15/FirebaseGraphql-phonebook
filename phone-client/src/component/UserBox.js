@@ -9,7 +9,7 @@ export default class UserBox extends Component {
             <div className="container">
                 <div className="card">
                     <div className="card-header text-center">
-                        React Phonebook
+                        React Phonebook App
             </div>
                     <div className="card-body">
                         <UserSearch/>
