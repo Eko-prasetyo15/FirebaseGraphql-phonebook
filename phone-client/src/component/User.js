@@ -4,28 +4,28 @@ const User = (props) => {
     return (
         <tr>
             <th scope="row">{props.id}</th>
-            <td>{props.name}</td>
-            <td>{props.addres}</td>
-            <td>{props.phone}</td>
+            <th scope="row">{props.name}</th>
+            <th scope="row">{props.addres}</th>
+            <th scope="row">{props.phone}</th>
             <td>
-                <button
-                    type="button"
-                    className="btn btn-danger"
-                    onClick={props.sent ? props.onDelete : props.resend}>
-                    {props.sent ? 'Hapus' : 'Kirim Ulang'}
-                </button>
-                <button
-                    type="button"
-                    className="btn btn-primary"
-                    onClick={props.sent ? props.onEdit : props.resend}>
-                    {props.sent ? 'Edit' : 'Kirim Ulang'}
-                </button>
+                {props.sent ? (
+                    <div>
+                        <button
+                            type="submit"
+                            className="btn btn-primary"
+                            onClick={props.onEdit}> Edit
+                        </button>
+                        <button
+                            type="button"
+                            className="btn btn-danger"
+                            onClick={props.onDelete}> Delete
+                        </button>
+                    </div>
+                ):
+                    <button type="button" onClick={props.resend} className="btn">
+                    <i className="fas fa-sync-alt"></i> Resend</button>
+}
             </td>
-            {!props.sent &&
-                <td style={{ color: "red", fontSize: "8px" }}>
-                    network failed, please check your connections
-            </td>
-            }
         </tr>
     )
 }

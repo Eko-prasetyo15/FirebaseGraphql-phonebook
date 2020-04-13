@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.card-header {
+background-color: rgb(141, 141, 151);
+}
+.card-body {
+background-color: peachpuff;
+}
+.card-footer {
+  background-color: rgb(141, 141, 151);
+}

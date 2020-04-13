@@ -42,15 +42,15 @@ class UserForm extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className="form-group row">
-                    <label htmlFor="id" className="col-sm-2 col-form-label">ID</label>
+                    <label htmlFor="id" className="col-sm-2 col-form-label">Call Name</label>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" id="id" name="id" value={this.state.id} onChange={this.handleidChange} placeholder="id" />
+                        <input type="text" className="form-control" id="id" name="id" value={this.state.id} onChange={this.handleidChange} placeholder="call name" />
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label htmlFor="Name" className="col-sm-2 col-form-label">Name</label>
+                    <label htmlFor="Name" className="col-sm-2 col-form-label">Full name</label>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" id="name" name="name" value={this.state.name} onChange={this.handlenameChange} placeholder="name" />
+                        <input type="text" className="form-control" id="name" name="name" value={this.state.name} onChange={this.handlenameChange} placeholder="full name" />
                     </div>
                 </div>
                 <div className="form-group row">

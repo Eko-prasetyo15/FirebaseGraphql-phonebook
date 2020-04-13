@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import UserList from '../containers/UserList';
 import UserForm from '../containers/UserForm';
+import UserSearch from '../containers/UserSearch';
 
 export default class UserBox extends Component {
     render() {
@@ -11,8 +12,10 @@ export default class UserBox extends Component {
                         React Phonebook
             </div>
                     <div className="card-body">
-                        <UserList />
-                        <UserForm />
+                        <UserSearch/>
+                        <br></br>
+                        <UserList/>
+                        <UserForm/>
                     </div>
                     <div className="card-footer text-center">
                         @create by Abushanum

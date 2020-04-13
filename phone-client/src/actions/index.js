@@ -91,6 +91,62 @@ export const postUser = (id, name, addres, phone) => {
     }
 }
 
+// start update contact data
+
+export const updateUserSuccess = (contact) => ({
+    type: 'UPDATE_USER_SUCCESS',
+    contact
+})
+
+export const updateUserFailure = () => ({
+    type: 'UPDATE_USER_FAILURE', 
+})
+
+const updateUserRedux = (id, name, addres, phone) => ({
+    type: 'UPDATE_USER', id, name, addres, phone
+})
+
+export const updateON = (id) => ({
+    type: 'UPDATE_ON', id
+})
+
+export const updateOFF = (id) => ({
+    type: 'UPDATE_OFF', id
+})
+
+
+export const updateUser = (id, name, addres, phone) => {
+    const addQuery = gql`
+        mutation updateUser($id: String!, $name: String!, $addres: String!, $phone: String!) {
+            updateUser(id: $id, name: $name, addres: $addres, phone: $phone) {
+                id
+                name
+                addres
+                phone
+            }
+        }`;
+    return dispatch => {
+        dispatch(updateUserRedux(id, name, addres, phone))
+        return client.mutate({
+            mutation: addQuery,
+            variables: {
+                id,
+                name,
+                addres,
+                phone
+            }
+        })
+            .then(function (response) {
+                alert('data berhasil di update')
+                dispatch(updateUserSuccess(response.data))
+            })
+            .catch(function (error) {
+                console.error(error);
+                dispatch(updateUserFailure(id))
+            });
+    }
+}
+
 // start delete user data
 
 const deleteUserRedux = (id) => ({
@@ -163,3 +219,12 @@ export const resendUser = (id, name, addres, phone) => {
             });
     }
 }
+
+export const searchUser = (value) => ({
+    type: "SEARCH_USER",
+    value: value.trim()
+})
+
+export const searchUserReset = () => ({
+    type: "SEARCH_USER_RESET"
+})
